@@ -1,0 +1,19 @@
+CROSS_HOST="x86_64-pc-cygwin"
+inherit cross
+
+NAME="cygwin64-libgpg-error"
+VERSION=1.10
+RELEASE=1
+CATEGORY="Devel"
+SUMMARY="GnuPG error code library for Cygwin 64bit toolchain"
+DESCRIPTION="This is a library that defines common error values for all GnuPG
+components.  Among these are GPG, GPGSM, GPGME, GPG-Agent, libgcrypt, Libksba,
+DirMngr, Pinentry, SmartCard Daemon and more."
+HOMEPAGE="http://www.gnupg.org/related_software/libgpg-error/"
+SRC_URI="ftp://ftp.gnupg.org/gcrypt/libgpg-error/libgpg-error-${VERSION}.tar.bz2
+	 ftp://ftp.gnupg.org/gcrypt/libgpg-error/libgpg-error-${VERSION}.tar.bz2.sig"
+SRC_DIR="libgpg-error-${VERSION}"
+
+MAKEOPTS+=" no_undefined=-no-undefined bin_PROGRAMS= dist_clfiles_DATA= nodist_clfiles_DATA= CATALOGS= "
+
+KEEP_LA_FILES="none"
